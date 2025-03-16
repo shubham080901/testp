@@ -7,26 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="bg-music" autoplay loop>
-        <source src="music/happy-birthday.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-    
-    <script>
-        // Ensure music starts playing after user interaction (required on some browsers)
-        document.addEventListener('click', function() {
-            let music = document.getElementById('bg-music');
-            if (music.paused) {
-                music.play();
-            }
-        });
-    </script>
+   <!-- Background Music -->
+<audio id="bg-music" loop>
+    <source src="happy-birthday.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
 
-    <!-- Background Music -->
-    <audio autoplay loop>
-        <source src="music/happy-birthday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let music = document.getElementById("bg-music");
+
+        // Try playing automatically
+        let playPromise = music.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                console.log("Autoplay blocked. Waiting for user interaction.");
+            });
+        }
+
+        // Ensure playback after any user interaction
+        function playMusic() {
+            if (music.paused) {
+                music.play().catch(error => console.log("Still blocked:", error));
+            }
+            document.removeEventListener("click", playMusic); // Remove event after first interaction
+        }
+
+        document.addEventListener("click", playMusic);
+    });
+</script>
+
 
     <div class="container">
         <h1>🎉 Happy Birthday, Sakshi! 🎂❤️</h1>
