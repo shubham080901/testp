@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Sakshi! 🎂❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="music/happy-birthday.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        // Ensure music starts playing after user interaction (required on some browsers)
+        document.addEventListener('click', function() {
+            let music = document.getElementById('bg-music');
+            if (music.paused) {
+                music.play();
+            }
+        });
+    </script>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="music/happy-birthday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <h1>🎉 Happy Birthday, Sakshi! 🎂❤️</h1>
+        <p class="birthday-message">
+            On this special day, I just want to remind you how amazing you are! You bring so much joy, laughter, and positivity into my life, and I’m beyond grateful to have you in my life. Through every high and low, you’ve been my rock and my biggest supporter.  
+            <br><br>
+            I hope this year brings you all the happiness, success, and love you deserve. May your dreams take flight, and may every moment be filled with endless laughter and unforgettable memories.  
+            <br><br>
+            Here’s to another year of crazy adventures, deep conversations, and countless fun moments together! Enjoy your day to the fullest—it's all about you today! 🎂🥳✨ I love you.  
+            <br><br>
+            **With love,**  
+            <b>Shubham ❤️</b>
+        </p>
+    </div>
+
+    <!-- Scrolling Photo Gallery -->
+    <div class="photo-gallery">
+        <div class="photo-track">
+            <img src="images/photo1.jpg" alt="Memory 1">
+            <img src="images/photo2.jpg" alt="Memory 2">
+            <img src="images/photo3.jpg" alt="Memory 3">
+            <img src="images/photo4.jpg" alt="Memory 4">
+            
+        </div>
+    </div>
+
+    <!-- Message Board -->
+    <!-- <div class="message-board" id="message-board">
+        <h2>💌 Leave a Birthday Message</h2>
+        <textarea id="messageInput" placeholder="Write your message here..."></textarea>
+        <button onclick="addMessage()">Send</button>
+        <div id="messages"></div>
+    </div> -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
